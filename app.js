@@ -50,6 +50,13 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = `Current Temperature : ${temperature}°C`;
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
 
