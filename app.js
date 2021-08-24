@@ -24,8 +24,7 @@ function formatDate(date) {
 }
 
 let dateElement = document.querySelector("#date");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
 function search(event) {
   event.preventDefault();
